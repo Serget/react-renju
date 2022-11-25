@@ -10,6 +10,8 @@ class Game extends React.Component {
         return {
             history:[{
                 squares: Array(225).fill(null),
+                col: null,
+                row: null
             }],
             bNext: true,
             currentStep: 0
@@ -30,11 +32,18 @@ class Game extends React.Component {
         const squares = current.squares.slice();
         if(squares[i]) return false;
         squares[i] = this.state.bNext ? 'black' : 'white';
+        
+        const col = (i % 15) + 1
+        const row = Math.ceil((i + 1)/15)
+        
+        console.log(col, row)
 
         this.setState({
             history: history.concat([
                 {
-                    squares: squares
+                    squares: squares,
+                    col: col,
+                    row: row
                 }
             ]),
             bNext: !this.state.bNext,
@@ -60,7 +69,7 @@ class Game extends React.Component {
                     onClick={(i) => this.handleClickTile(i)}
                 />
                 <History 
-                    squares={history}
+                    history={history}
                     onClick={() => this.resetGame()}
                     onJump={(i) => this.jumpTo(i)}
                     next={this.state.bNext}
