@@ -1,0 +1,16 @@
+.nextPlayer {
+    
+}
+.white, .black {
+    display:inline-block;
+    width:20px;
+    height:20px;
+    background:#ccc;
+    border-radius:50%;
+}
+.black {
+    background:#000;
+}
+.currentStep {
+    font-weight:bold;
+}

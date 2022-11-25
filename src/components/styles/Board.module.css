@@ -1,0 +1,6 @@
+.Board {
+    width:500px;
+    display:flex;
+    margin:auto;
+    flex-wrap:wrap;
+}
