@@ -37,3 +37,7 @@
     background:#000;
     border-radius:50%;
 }
+.winner {
+    background:rgb(175, 255, 175);
+    border:none;
+}

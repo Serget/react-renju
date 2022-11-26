@@ -10,9 +10,11 @@ export default class Board extends React.Component {
                 tiles.push(
                     <Tile
                         key={i}
+                        tileId={i}
                         tileColor={this.props.squares[i]}
                         highlightTile={ false }
                         onClick={() => this.props.onClick(i)}
+                        winner={this.props.winner}
                     />
                 )
             }

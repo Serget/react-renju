@@ -3,10 +3,19 @@ import styles from './styles/History.module.css'
 
 class History extends React.Component {
     render() {
+        let text = 'Next Player:';
+        let classes = [];
+        if(this.props.winner) {
+            classes.push( styles[this.props.history[this.props.history.length - 1].squares[this.props.winner[0]]] );
+            classes.push('winner');
+            text = 'Winner:';
+        } else {
+            classes.push(this.props.next ? styles.black : styles.white);
+        }
         return(
             <div>
             <button onClick={this.props.onClick}>Reset Game</button>
-            <div className="nextPlayer">Next Player: <div className={ this.props.next ? styles.black : styles.white }></div></div>
+            <div className="nextPlayer">{text} <div className={ classes.join(' ') }></div></div>
             <h3>History</h3>
             {
             this.props.history.map((val, index) => {

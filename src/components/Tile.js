@@ -6,6 +6,7 @@ const Tile = props => {
     classNames.push(styles.tile);
     if(props.tileColor=='black') classNames.push(styles.black);
     if(props.tileColor=='white') classNames.push(styles.white);
+    if(props.winner) if(props.winner.includes(props.tileId)) classNames.push(styles.winner);
     return (
         <div 
             className={classNames.join(' ')}
