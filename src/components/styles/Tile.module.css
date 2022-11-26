@@ -37,7 +37,11 @@
     background:#000;
     border-radius:50%;
 }
-.winner {
-    background:rgb(175, 255, 175);
-    border:none;
+.winner:before {
+    top:-2px;
+    left:-2px;
+    border:4px solid rgb(115 190 48);
+    width:calc(100% - 4px);
+    height:calc(100% - 4px);
+    z-index:9;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Board from "./Board";
 import History from "./History";
 import Header from "./Header";
+import styles from "./styles/Game.module.css"
 
 
 class Game extends React.Component {
@@ -135,8 +136,9 @@ class Game extends React.Component {
         const current = history[this.state.currentStep];
         const winner = this.state.winner;
         return(
-            <>
+            <div className={styles.gameWrapper}>
                 <Header />
+                <div className={styles.gameContainers}>
                 <Board
                     squares={current.squares}
                     onClick={(i) => this.handleClickTile(i)}
@@ -150,7 +152,8 @@ class Game extends React.Component {
                     current={this.state.currentStep}
                     winner={winner}
                 />
-            </>
+                </div>
+            </div>
         )
     }
 }
